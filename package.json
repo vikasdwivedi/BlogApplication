@@ -1,0 +1,71 @@
+{
+  "name": "blogapplication",
+  "version": "0.0.1",
+  "description": "My blog template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart":"babel-node buildScripts/initializingServer.js",
+    "start":"npm-run-all --parallel security-check lint-watch get:src start-mock-api",
+    "get:src":"babel-node buildScripts/mainServer.js",
+    "lint":"esw webpack.config.* src buildScripts --color",
+    "lint-watch" :"npm run lint -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikdwi/BlogApplication.git"
+  },
+  "keywords": [
+    "blog",
+    "node",
+    "express",
+    "mongodb",
+    "webpack",
+    "lint"
+  ],
+  "author": "Vikas Dwivedi",
+  "license": "ISC",
+  "dependencies": {
+    "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-latest": "6.24.1",
+    "babel-register": "6.26.0",
+    "chai": "4.1.1",
+    "chalk": "2.1.0",
+    "cheerio": "1.0.0-rc.2",
+    "compression": "1.7.0",
+    "cross-env": "5.0.5",
+    "css-loader": "^0.28.5",
+    "eslint": "4.5.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-watch": "3.1.2",
+    "express": "4.15.4",
+    "extract-text-webpack-plugin": "3.0.0",
+    "html-webpack-plugin": "2.30.1",
+    "jsdom": "11.2.0",
+    "json-schema-faker": "0.4.3",
+    "json-server": "0.12.0",
+    "localtunnel": "1.8.3",
+    "mocha": "3.5.0",
+    "nock": "9.0.14",
+    "npm-run-all": "4.0.2",
+    "nsp": "2.7.0",
+    "numeral": "2.0.6",
+    "open": "0.0.5",
+    "rimraf": "2.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "0.18.2",
+    "webpack": "3.5.5",
+    "webpack-dev-middleware": "1.12.0",
+    "webpack-hot-middleware": "2.18.2",
+    "webpack-md5-hash": "0.0.5"
+  },
+  "bugs": {
+    "url": "https://github.com/vikdwi/BlogApplication/issues"
+  },
+  "homepage": "https://github.com/vikdwi/BlogApplication#readme"
+}
